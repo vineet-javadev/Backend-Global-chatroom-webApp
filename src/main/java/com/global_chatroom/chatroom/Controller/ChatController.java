@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.global_chatroom.chatroom.Model.ChatMessage;
 
+@CrossOrigin("*")
 @RestController
 public class ChatController {
     
-    @CrossOrigin(origins = "https://frontend-global-chatroom.vercel.app")
     @MessageMapping("/message")
     @SendTo("/topic/subscribers")
     public ChatMessage broadCastMessage(ChatMessage chatMessage){
