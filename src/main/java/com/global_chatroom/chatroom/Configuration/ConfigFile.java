@@ -18,6 +18,9 @@ public class ConfigFile implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/server").setAllowedOrigins("http://localhost:3000").withSockJS();
+        // for localhost
+        // registry.addEndpoint("/server").setAllowedOrigins("http://localhost:3000").withSockJS();
+        // for global
+        registry.addEndpoint("/server").setAllowedOrigins("https://frontend-global-chatroom.vercel.app/").withSockJS();
     }
 }
